@@ -1,0 +1,10 @@
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\bin\Debug\HRMInterface.exe.config
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\bin\Debug\HRMInterface.exe
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\bin\Debug\HRMInterface.pdb
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.csprojAssemblyReference.cache
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.Form1.resources
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.Properties.Resources.resources
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.csproj.GenerateResource.cache
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.csproj.CoreCompileInputs.cache
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.exe
+C:\Users\rave\source\repos\HRMInterface\HRMInterface\obj\Debug\HRMInterface.pdb
