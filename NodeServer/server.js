@@ -3,35 +3,50 @@ var Static = require('node-static');
 var WebSocketServer = new require('ws');
 var fs = require('fs');
 
-// подключенные клиенты
+// Connected clients
 var clients = {};
 
-// WebSocket-сервер на порту 8888
-var webSocketServer = new WebSocketServer.Server({server: '0.0.0.0', port: 8888});
-webSocketServer.on('connection', function(ws) {
+// Open WebSocketServer port 8888
+var WebSocketServer = require('ws').Server;
+var wss = new WebSocketServer({port:8888});
+var messages = 0;
+
+const server = wss._server;
+
+//var webSocketServer = new WebSocketServer.Server({server: '0.0.0.0', port: 8888});
+
+  
+wss.on('connection', function(ws) {
 
   var id = Math.random();
   clients[id] = ws;
-  console.log("новое соединение " + id);
+  console.log("New client: " + id);
 
   ws.on('message', function(message) {
-    console.log('получено сообщение ' + message);
+    console.log('Got message: ' + message);
+	messages += 1;
 	
 	fs.writeFile("../heart-rate.txt", message, function(err) {
       if(err) {
         return console.log(err);
       }
 
-      console.log("The file was saved!");
+      console.log("The file was saved!", messages);
 	}); 
 
-    for(var key in clients) {
-      clients[key].send(message);
-    }
+    //for(var key in clients) {
+    //  clients[key].send(message);
+	//  console.log('Connection closed ' + id);
+	//  //delete clients[id];
+    //}
   });
 
   ws.on('close', function() {
-    console.log('соединение закрыто ' + id);
+    //console.log('Connection closed ' + id);
+	server.close();
+	setTimeout(function(){
+        wss = new WebSocketServer({port:8888});
+    }, 10000);
     delete clients[id];
   });
 
