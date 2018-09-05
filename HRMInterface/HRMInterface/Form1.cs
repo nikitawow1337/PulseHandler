@@ -1,12 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.Runtime.InteropServices;
@@ -32,8 +25,9 @@ namespace HRMInterface
         {
             InitializeComponent();
 
-            this.BackColor = Color.Red;
-            this.TransparencyKey = Color.Red;
+            //this.BackColor = Color.Green;
+            this.BackColor = Color.LimeGreen;
+            //this.TransparencyKey = Color.LimeGreen;
             PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             Color myColor = Color.FromArgb(204, 19, 23);
             label1.BackColor = myColor;
@@ -64,11 +58,6 @@ namespace HRMInterface
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
-        }
-
-        private void PictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
