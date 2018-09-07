@@ -20,15 +20,20 @@ var sensorStarted = false;
 //var http = new XMLHttpRequest();
 //var url = '192.168.1.125:8888';
 //var params = 'orem=ipsum&name=binny';
-//var rate;
+var rate;
+
+var socket = new WebSocket("ws://192.168.1.144:8888");
+socket.addEventListener('open', function (event) {
+    socket.send(rate);
+});
 
 setTimeout(function(){
 	// Create
-    var socket = new WebSocket("ws://192.168.0.6:8888");
-    // Opened
-    socket.addEventListener('open', function (event) {
-        socket.send(rate);
-    });
+	socket.send(rate);
+	//socket.resume();
+	//socket.pause();
+    // Opened   
+    //socket.close();
     setTimeout(arguments.callee, 1000);
   }, 1000);
 
